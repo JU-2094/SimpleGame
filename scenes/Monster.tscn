@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/PNG/11.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 26.285
+radius = 65.4952
 
 [node name="Monster" type="RigidBody2D"]
-position = Vector2( 477.55, 172.816 )
+position = Vector2( 228.459, 137.618 )
 input_pickable = true
 gravity_scale = 3.72
 script = ExtResource( 1 )
@@ -16,6 +16,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0.19751, 2.54977 )
 shape = SubResource( 1 )
 
