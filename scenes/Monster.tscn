@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Monster.gd" type="Script" id=1]
+[ext_resource path="res://PNG/11.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 26.285
+
+[node name="Monster" type="RigidBody2D"]
+position = Vector2( 477.55, 172.816 )
+input_pickable = true
+gravity_scale = 3.72
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.19751, 2.54977 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0, 2.7438 )
+scale = Vector2( 0.227541, 0.196225 )
+texture = ExtResource( 2 )
+
+[connection signal="input_event" from="." to="." method="_on_Monster_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_Monster_mouse_entered"]
