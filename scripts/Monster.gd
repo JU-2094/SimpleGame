@@ -17,6 +17,7 @@ func _ready():
 
 func _on_Monster_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton :
+		print("click")
 		var direction = (self.position - get_global_mouse_position()).normalized()
 		print(direction*speed)
 		self.linear_velocity = direction*speed

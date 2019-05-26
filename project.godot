@@ -18,13 +18,6 @@ _global_script_class_icons={
 config/name="SimpleGame"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/width=500
-window/handheld/orientation="portrait"
-window/stretch/mode="2d"
-
 [rendering]
 
-environment/default_clear_color=Color( 0.0823529, 0.439216, 0.470588, 1 )
 environment/default_environment="res://default_env.tres"
