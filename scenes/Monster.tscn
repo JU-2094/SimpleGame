@@ -7,7 +7,7 @@
 radius = 65.4952
 
 [node name="Monster" type="RigidBody2D"]
-position = Vector2( 228.459, 137.618 )
+position = Vector2( 175.716, 90.1496 )
 input_pickable = true
 gravity_scale = 3.72
 script = ExtResource( 1 )
@@ -25,5 +25,7 @@ position = Vector2( 0, 2.7438 )
 scale = Vector2( 0.227541, 0.196225 )
 texture = ExtResource( 2 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
 [connection signal="input_event" from="." to="." method="_on_Monster_input_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_Monster_mouse_entered"]
