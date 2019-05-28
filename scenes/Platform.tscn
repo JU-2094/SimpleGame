@@ -11,6 +11,7 @@ extents = Vector2( 196.946, 86.4642 )
 
 [node name="Platform" type="StaticBody2D"]
 position = Vector2( 246.132, 495.781 )
+rotation = 1.5708
 scale = Vector2( 0.374052, 0.442612 )
 collision_layer = 3
 physics_material_override = SubResource( 1 )

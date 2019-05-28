@@ -1,10 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Monster.gd" type="Script" id=1]
 [ext_resource path="res://assets/PNG/11.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 65.4952
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.243402, 0.407625, 0.709677, 0.923754 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.483398, 0.463933, 0.139732, 1, 0.396255, 0.773438, 0.205444, 1, 0.119766, 0.14057, 0.652344, 1, 0.964844, 0.048996, 0.048996, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -165.16
+max_value = 100.1
+_data = [ Vector2( 0, -3.41984 ), 0.0, 0.0, 0, 0, Vector2( 1, -22.02 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+render_priority = 10
+trail_divisor = 10
+trail_size_modifier = SubResource( 6 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 104.74
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = -227.4
+color_ramp = SubResource( 4 )
+hue_variation = 0.07
 
 [node name="Monster" type="RigidBody2D"]
 position = Vector2( 175.716, 90.1496 )
@@ -26,6 +55,17 @@ scale = Vector2( 0.227541, 0.196225 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 30.0715, -2.86395 )
+rotation = -0.186843
+offset = Vector2( 1, 0 )
 current = true
+limit_left = 0
+limit_right = 300
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0, 0.391602 )
+rotation = 1.53938
+process_material = SubResource( 2 )
 
 [connection signal="input_event" from="." to="." method="_on_Monster_input_event"]
