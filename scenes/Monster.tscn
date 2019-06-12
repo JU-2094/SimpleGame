@@ -6,25 +6,25 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 65.4952
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.243402, 0.407625, 0.709677, 0.923754 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.483398, 0.463933, 0.139732, 1, 0.396255, 0.773438, 0.205444, 1, 0.119766, 0.14057, 0.652344, 1, 0.964844, 0.048996, 0.048996, 1 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=4]
 min_value = -165.16
 max_value = 100.1
 _data = [ Vector2( 0, -3.41984 ), 0.0, 0.0, 0, 0, Vector2( 1, -22.02 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=6]
 render_priority = 10
 trail_divisor = 10
-trail_size_modifier = SubResource( 6 )
+trail_size_modifier = SubResource( 5 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
@@ -32,7 +32,7 @@ initial_velocity = 104.74
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = -227.4
-color_ramp = SubResource( 4 )
+color_ramp = SubResource( 3 )
 hue_variation = 0.07
 
 [node name="Monster" type="RigidBody2D"]
@@ -66,6 +66,6 @@ limit_right = 300
 show_behind_parent = true
 position = Vector2( 0, 0.391602 )
 rotation = 1.53938
-process_material = SubResource( 2 )
+process_material = SubResource( 6 )
 
 [connection signal="input_event" from="." to="." method="_on_Monster_input_event"]
